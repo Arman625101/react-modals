@@ -1,0 +1,43 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add react react-dom-react-hot-loader
+
+PATH: 
+  C:\Users\Arman\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Git\cmd;C:\Users\Arman\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\Arman\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Program Files (x86)\Nmap;C:\Users\Arman\AppData\Local\hyper\app-2.0.0\resources\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.6.0
+
+Node version: 
+  10.0.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/react-dom-react-hot-loader: Not found
+      at Request.params.callback [as _callback] (C:\Users\Arman\AppData\Roaming\nvm\v10.0.0\node_modules\yarn\lib\cli.js:65327:18)
+      at Request.self.callback (C:\Users\Arman\AppData\Roaming\nvm\v10.0.0\node_modules\yarn\lib\cli.js:133155:22)
+      at Request.emit (events.js:182:13)
+      at Request.<anonymous> (C:\Users\Arman\AppData\Roaming\nvm\v10.0.0\node_modules\yarn\lib\cli.js:134138:10)
+      at Request.emit (events.js:182:13)
+      at IncomingMessage.<anonymous> (C:\Users\Arman\AppData\Roaming\nvm\v10.0.0\node_modules\yarn\lib\cli.js:134058:12)
+      at Object.onceWrapper (events.js:275:13)
+      at IncomingMessage.emit (events.js:187:15)
+      at endReadableNT (_stream_readable.js:1091:14)
+      at process._tickCallback (internal/process/next_tick.js:174:19)
+
+npm manifest: 
+  {
+    "name": "react-modals",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/Arman625101/react-modals.git",
+    "author": "ArmanGH",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
