@@ -1,12 +1,27 @@
-import React from 'react';
-import ModalZ from './ModalZ';
+import React, { Component } from 'react';
+import ModalZ from '../libs/ModalZ';
 
-const Demo = () => (
-  <div>
-    <h1>Demo ModalZ</h1>
-    <button>Open Modal</button>
-    <ModalZ>Hello ModalZ</ModalZ>
-  </div>
-);
+class Demo extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isOpen: false,
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState({ isOpen: true });
+  }
+  render() {
+    return (
+      <div>
+        <h1>Demo ModalZ</h1>
+        <button onClick={this.handleClick}>Open Modal</button>
+        {this.state.isOpen && <ModalZ>Hello ModalZ</ModalZ>}
+      </div>
+    );
+  }
+}
 
 export default Demo;

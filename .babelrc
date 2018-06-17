@@ -1,4 +1,4 @@
 {
   "presets": ["stage-0", "react"],
-  "plugins": ["react-hot-loader/babel"]
+  "plugins": ["emotion", "react-hot-loader/babel"]
 }

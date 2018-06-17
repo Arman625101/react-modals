@@ -12,12 +12,14 @@
   },
   "dependencies": {
     "dotenv": "^6.0.0",
+    "emotion": "^9.2.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-hot-loader": "^4.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^8.6.2",
+    "babel-plugin-emotion": "^9.2.0",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
