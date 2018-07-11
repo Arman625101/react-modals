@@ -19,12 +19,12 @@
   },
   "devDependencies": {
     "autoprefixer": "^8.6.2",
-    "babel-plugin-emotion": "^9.2.0",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-emotion": "^9.2.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
