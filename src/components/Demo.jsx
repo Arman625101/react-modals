@@ -18,7 +18,9 @@ class Demo extends Component {
       <div>
         <h1>Demo ModalZ</h1>
         <button onClick={this.handleClick}>Open Modal</button>
-        {this.state.isOpen && <ModalZ>Hello ModalZ</ModalZ>}
+        <ModalZ isOpen={this.state.isOpen} size="medium">
+          <h1>Modal</h1>
+        </ModalZ>
       </div>
     );
   }
