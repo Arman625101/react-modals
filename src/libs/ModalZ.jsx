@@ -32,8 +32,6 @@ const ModalZ = ({
     font-family: 'Roboto', sans-serif;
 
     position: absolute;
-    opacity: ${isOpened ? '1' : '0'};
-    visibility: ${isOpened ? 'visible' : 'hidden'};
     top: 0;
     left: 0;
     width: 100%;
@@ -48,35 +46,20 @@ const ModalZ = ({
     z-index: 1000;
     transition: background-color 0.5s linear;
   `;
-  const opened = {
-    opacity: 1,
-    visibility: 'visible',
-  };
-  const closed = {
-    opacity: 0,
-    visibility: 'hidden',
-  };
-
-  const clicked = () => (e) => {
-    // console.log('Clicked');
-  };
-  const modalZHolder = document.getElementById('modalZHolder');
-  const modalZ = document.getElementById('modalZ');
-  if (modalZHolder) {
-    modalZHolder.addEventListener('click', (e) => {
-      if (e.target.id === 'modalZHolder') {
-        console.log(modalZHolder.classList);
-        modalZHolder.classList.remove('opened');
-      }
-    });
-  }
+  const opened = css`
+    opacity: 1;
+    visibility: 'visible';
+  `;
+  const closed = css`
+    opacity: 0;
+    visibility: hidden;
+  `;
 
   return (
-    <div id="modalZHolder" className={`${holder}`} style={isOpened ? opened : closed}>
+    <div id="modalZHolder" className={holder}>
       <div
         id="modalZ"
-        className={cx(body)}
-        onClick={clicked()}
+        className={body}
         role="presentation"
         css={`
           @media (min-width: 992px) {
