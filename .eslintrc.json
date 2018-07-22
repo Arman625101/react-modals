@@ -12,6 +12,8 @@
     "class-methods-use-this": "off",
     "react/no-array-index-key": "off",
     "react/prop-types": "warn",
+    "jsx-a11y/click-events-have-key-events": false,
+    "jsx-a11y/no-static-element-interactions": false,
     "jsx-a11y/aria-role": [
       2,
       {
