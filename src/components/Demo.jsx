@@ -16,9 +16,8 @@ class Demo extends Component {
   render() {
     return (
       <div>
-        <h1>Demo ModalZ</h1>
-        <button onClick={this.handleClick}>Open Modal</button>
-        <ModalZ isOpen={this.state.isOpen} size="medium">
+        <button className="toggle-modal" onClick={this.handleClick}>Open Modal</button>
+        <ModalZ isOpen={this.state.isOpen} size="large">
           <h1>Modal</h1>
         </ModalZ>
       </div>

@@ -19,29 +19,42 @@ class ModalZ extends Component {
   constructor(props) {
     super(props);
     this.closeModal = this.closeModal.bind(this);
+    this.modal = React.createRef();
+  }
+
+  componentDidMount() {
+    this.modal.current.classList.add('closed');
+  }
+
+  componentDidUpdate() {
+    const elem = document.createElement('div');
+    elem.setAttribute('id', 'modalZHolder');
+    document.body.appendChild(elem);
+    if (this.props.isOpen) {
+      this.modal.current.classList.remove('closed');
+      this.modal.current.classList.add('opened');
+    } else {
+      this.modal.current.classList.remove('opened');
+      this.modal.current.classList.add('closed');
+    }
   }
 
   closeModal = () => (e) => {
-    const modal = document.getElementById('modalZHolder');
-    modal.classList.remove('opened');
-    modal.classList.add('closed');
+    if (e.target.id === 'modalZHolder') {
+      this.modal.current.classList.remove('opened');
+      this.modal.current.classList.add('closed');
+    }
   };
 
   render() {
     const {
       size, text, children, isOpen,
     } = this.props;
-
     return (
-      <div
-        onClick={this.closeModal()}
-        id="modalZHolder"
-        className={`holder ${isOpen ? 'opened' : 'closed'}`}
-      >
+      <div onClick={this.closeModal()} ref={this.modal} id="modalZHolder" className="holder">
         <div
           id="modalZ"
           className="body"
-          role="presentation"
           css={`
             @media (min-width: 992px) {
               width: ${setSize(size)};
