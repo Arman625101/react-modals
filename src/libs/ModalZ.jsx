@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { cx, css } from 'emotion';
+import ReactDOM from 'react-dom';
 import '../assets/index.scss';
-import ModalZPortal from './ModalZPortal';
 
 const setSize = (size) => {
   switch (size) {
@@ -17,60 +17,42 @@ const setSize = (size) => {
 };
 
 class ModalZ extends Component {
-  constructor(props) {
-    super(props);
-    this.closeModal = this.closeModal.bind(this);
-    this.modal = React.createRef();
+  componentWillMount() {
+    this.el = document.createElement('div');
+    this.el.setAttribute('id', 'modalZPortal');
+    document.body.appendChild(this.el);
   }
 
-  componentDidMount() {
-    // this.modal.current.classList.add('closed');
+  componentWillUnmount() {
+    document.body.removeChild(this.el);
   }
-
-  componentDidUpdate() {
-    // if (this.props.isOpen) {
-    //   this.modal.current.classList.remove('closed');
-    //   this.modal.current.classList.add('opened');
-    // } else {
-    //   this.modal.current.classList.remove('opened');
-    //   this.modal.current.classList.add('closed');
-    // }
-  }
-
-  closeModal = () => (e) => {
-    console.log('A');
-    if (e.target.id === 'modalZHolder') {
-    }
-  };
 
   render() {
     const {
-      size, text, children, isOpen,
+      size, text, children, isOpen, onClose,
     } = this.props;
-    return (
-      <Fragment>
-        {isOpen && (
-          <ModalZPortal onClose={this.closeModal()}>
-            <div ref={this.modal} id="modalZHolder" className="holder">
-              <div
-                id="modalZ"
-                className="body"
-                css={`
-                  @media (min-width: 992px) {
-                    width: ${setSize(size)};
-                  }
-                  @media (min-width: 576px) {
-                    width: ${setSize(size)};
-                    margin: 1.75rem auto;
-                  }
-                `}
-              >
-                {children || text}
-              </div>
-            </div>
-          </ModalZPortal>
-        )}
-      </Fragment>
+    return ReactDOM.createPortal(
+      <div ref={this.modal} className="holder">
+        <div
+          id="modalZ"
+          className="body"
+          css={`
+            @media (min-width: 992px) {
+              width: ${setSize(size)};
+            }
+            @media (min-width: 576px) {
+              width: ${setSize(size)};
+              margin: 1.75rem auto;
+            }
+          `}
+        >
+          <button className="close" onClick={onClose}>
+            Close
+          </button>
+          {children || text}
+        </div>
+      </div>,
+      this.el,
     );
   }
 }
