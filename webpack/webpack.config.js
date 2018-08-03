@@ -33,20 +33,29 @@ const common = {
     splitChunks: {
       cacheGroups: {
         default: false,
+        vendors: false,
         react: {
           test: /react/,
           name: 'react',
           minSize: 1,
-          chunks: 'initial',
+          chunks: 'all',
           reuseExistingChunk: true,
         },
         vendor: {
-          test: /node_module\/(?!react)/,
+          test: /node_modules\/(?!react)/,
           name: 'vendor',
           minSize: 1,
           minChunks: 2,
-          chunks: 'initial',
+          chunks: 'all',
           reuseExistingChunk: true,
+        },
+        common: {
+          name: 'common',
+          minChunks: 2,
+          chunks: 'async',
+          priority: 10,
+          reuseExistingChunk: true,
+          enforce: true,
         },
       },
     },
